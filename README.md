@@ -26,35 +26,23 @@ Include your code here
 ```
 from django.db import models
 from django.contrib import admin
-
-# Create your models here.
-class Student (models.Model):
-    referencenumber=models.CharField(primary_key=True,max_length=20,help_text="reference number")
-    name=models.CharField(max_length=100)
+class Football(models.Model):
+    player_name=models.CharField(max_length=20)
     age=models.IntegerField()
     email=models.EmailField()
-
-
-class StudentAdmin(admin.ModelAdmin):
-    list_display=('referencenumber','name','age''email')
+class FootballAdmin(admin.ModelAdmin):
+    list_display=('player_name','age','email')
 ```
-### CODE FROM ADMINS.PY:
+### CODE FROM ADMIN.PY:
 ```
 from django.contrib import admin
-from .models import Student,StudentAdmin
-
-
-# Register your models here.
-admin.site.register(Student,StudentAdmin)
+from .models import Football,FootballAdmin
+admin.site.register(Football,FootballAdmin)
 ```
 ## OUTPUT
-STUDENTS DETAILS:
+PLAYER DETAILS
 
-![image](https://github.com/mithra916/django-orm-app/assets/149986612/3d4c9342-75ae-4b89-8a24-91f3941620a1)
-
-ERROR:
-
-![image](https://github.com/mithra916/django-orm-app/assets/149986612/43c3d7f6-aa61-4026-b94b-5e9622c26dac)
+![Screenshot 2024-01-29 190335](https://github.com/mithra916/django-orm-app/assets/149986612/64748bac-bcf9-4af7-ab84-de3fb1582a73)
 
 ## RESULT
 Thus the program for creating the database using Django ORM has been executed successfully.
